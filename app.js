@@ -5,13 +5,23 @@ import express from "express";
 const app = express();
 const port = 4416;
 
+app.use(express.static("public"));
+
+
 app.get("/", (req, res) => {
     res.send("Server bootstrappato by MatteoStrap")
 
 })
 
 app.get("/bacheca", (req, res) => {
-    res.json(ferrariWins)
+    const response = {
+        info: {
+            totalPosts: ferrariWins.length,
+        },
+        results: ferrariWins,
+    }
+
+    res.json(response)
 })
 
 app.listen(port, () => {
