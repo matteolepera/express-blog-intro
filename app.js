@@ -10,6 +10,10 @@ app.get("/", (req, res) => {
 
 })
 
+app.get("/bacheca", (req, res) => {
+    res.json(ferrariWins)
+})
+
 app.listen(port, () => {
     console.log(`Il server è pronto a bootstrappare sulla porta ${port} :)`)
 })
